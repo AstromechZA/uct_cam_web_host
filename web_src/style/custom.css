@@ -1,0 +1,28 @@
+body{
+    background: #00CCCC;
+}
+
+.container{
+    background: #fff;
+    box-shadow: 0px 0px 5px 0px #333;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+#past_images .imageoverlay{
+    position: relative;
+    float:left;
+}
+
+#past_images p{
+    margin:10px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    font-size: 10px;
+    color: #fff;
+    background: rgba(0,0,0,0.5);
+}
