@@ -1,5 +1,4 @@
 require 'yaml'
-require 'json'
 require 'fileutils'
 
 # path stuff
@@ -44,7 +43,7 @@ imgs = []
 tsa.each do |ts|
     imgs << [Time.at(ts).asctime, "img#{ts}.jpg","thumb#{ts}.jpg"]
 end
-js = "var imagearray = #{JSON.dump(imgs)};"
+js = "var imagearray = #{imgs};"
 
 # create js dir
 Dir.mkdir(File.join(cnf['js_dir'])) if not Dir.exists?(cnf['js_dir'])
