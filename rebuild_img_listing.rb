@@ -12,7 +12,7 @@ puts cnf
 tsa = []
 
 # create img dir
-Dir.mkdir(File.join(cnf['img_dir'])) if not Dir.exists?(cnf['img_dir'])
+Dir.mkdir(File.join(cnf['img_dir'])) if not File.directory?(cnf['img_dir'])
 
 Dir.glob(File.join(cnf['img_dir'], '*.jpg')) do |f|
     m = File.basename(f).match(/img(\d*)\.jpg/)
@@ -46,7 +46,7 @@ end
 js = "var imagearray = #{imgs};"
 
 # create js dir
-Dir.mkdir(File.join(cnf['js_dir'])) if not Dir.exists?(cnf['js_dir'])
+Dir.mkdir(File.join(cnf['js_dir'])) if not File.directory?(cnf['js_dir'])
 
 # write out
 outf = File.join(cnf['js_dir'], 'dataset.js')
