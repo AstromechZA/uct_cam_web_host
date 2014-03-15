@@ -43,7 +43,7 @@ imgs = []
 tsa.each do |ts|
     imgs << [Time.at(ts).asctime, "img#{ts}.jpg","thumb#{ts}.jpg"]
 end
-js = "var imagearray = #{imgs};"
+js = "var imagearray = #{imgs.inspect};"
 
 # create js dir
 Dir.mkdir(File.join(cnf['js_dir'])) if not File.directory?(cnf['js_dir'])
