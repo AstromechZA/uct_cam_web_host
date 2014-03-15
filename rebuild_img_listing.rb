@@ -40,9 +40,9 @@ Dir.glob(File.join(cnf['img_dir'], '*.jpg')) do |f|
 end
 
 # build images javascript
-imgs = {}
+imgs = []
 tsa.each do |ts|
-    imgs[Time.at(ts).asctime] = ["img#{ts}.jpg","thumb#{ts}.jpg"]
+    imgs << [Time.at(ts).asctime, "img#{ts}.jpg","thumb#{ts}.jpg"]
 end
 js = "var imagearray = #{JSON.dump(imgs)};"
 
