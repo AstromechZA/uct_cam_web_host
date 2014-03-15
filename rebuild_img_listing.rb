@@ -37,7 +37,10 @@ Dir.glob(File.join(cnf['img_dir'], '*.jpg')) do |f|
 end
 
 # build images javascript
-imgs = tsa.map {|x| ["img#{x}.jpg","thumb#{x}.jpg"]}
+imgs = {}
+tsa.each do |ts|
+    imgs[Time.at(ts).asctime] = ["img#{x}.jpg","thumb#{x}.jpg"]
+end
 js = "var imagearray = #{JSON.dump(imgs)};"
 
 # create js dir
