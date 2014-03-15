@@ -39,7 +39,7 @@ end
 # build images javascript
 imgs = {}
 tsa.each do |ts|
-    imgs[Time.at(ts).asctime] = ["img#{x}.jpg","thumb#{x}.jpg"]
+    imgs[Time.at(ts).asctime] = ["img#{ts}.jpg","thumb#{ts}.jpg"]
 end
 js = "var imagearray = #{JSON.dump(imgs)};"
 
