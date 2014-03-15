@@ -6,7 +6,7 @@ current_dir = File.dirname(__FILE__)
 
 # load config
 cnf = YAML::load_file(File.join(current_dir, 'config.yml'))
-puts cnf
+puts cnf.inspect
 
 # time stamp array
 tsa = []
